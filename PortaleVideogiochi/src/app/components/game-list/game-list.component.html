@@ -1,3 +1,3 @@
-<p>
-  game-list works!
-</p>
+<ul>
+    <li *ngFor="let item of gameList" (click)="showDetail(item.id)">{{item.descrizione}}></li>
+</ul>

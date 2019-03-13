@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MenuItem } from 'src/app/model/menu-item';
+import { GameItem } from 'src/app/model/gameitem';
+import { GameListService } from 'src/app/services/game-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -8,24 +9,15 @@ import { MenuItem } from 'src/app/model/menu-item';
 })
 export class GameListComponent implements OnInit {
 
-  gameList: MenuItem[] = [
-    {id:1, descrizione:"Counter Strike: Global Offensive", selezionato: false},
-    {id:2, descrizione:"Grand Theft Auto 5", selezionato: false},
-    {id:3, descrizione:"Minecraft", selezionato: false},
-    {id:4, descrizione:"The Elder Scrolls V: Skyrim", selezionato: false},
-    {id:5, descrizione:"Keep Talking and Nobody Explodes", selezionato: false},
-    {id:6, descrizione:"League of Legends", selezionato: false},
-    {id:7, descrizione:"Fallout 4", selezionato: false},
-  ]
+  gameList: GameItem[];
 
-  constructor() { }
+  constructor(private gameService: GameListService) { }
 
   ngOnInit() {
+    this.gameList = this.gameService.getGameList();
   }
 
-  getGameList(){
-    return this.gameList;
-  }
+ 
 
 
   @Output('showDetail')

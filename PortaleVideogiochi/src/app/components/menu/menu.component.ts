@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,18 +8,15 @@ import { MenuItem } from 'src/app/model/menu-item';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  menuList: MenuItem[] = [
-    {id: 1, descrizione: 'Home', selezionato: false},
-    {id: 2, descrizione: 'Lista', selezionato: false},
-    {id: 3, descrizione: 'Modifica', selezionato: false}
-  ];
+  menuList: MenuItem[];
 
   @Output('showSection')
   showSectionEvent: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
+    this.menuList = this.menuService.menuList;
   }
 
   showSection(id: number){

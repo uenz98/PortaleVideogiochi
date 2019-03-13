@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { getTranslationForTemplate } from '@angular/core/src/render3/i18n';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SuperGames';
+  idSectionToShow: number = 1;
+  title = 'Demo2019';
+
+  changeSection(id: number) {
+    this.idSectionToShow = id;
+  }
 }

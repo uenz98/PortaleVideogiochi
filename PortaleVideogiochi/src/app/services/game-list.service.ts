@@ -19,4 +19,12 @@ export class GameListService {
   getGameList(){
     return this.gameList;
   }
+
+  getGameById(id:number): GameItem{
+    return this.gameList[id-1];
+  }
+
+  modify(game:GameItem){
+    this.gameList[game.id] = game;
+  }
 }

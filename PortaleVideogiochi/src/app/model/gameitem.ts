@@ -6,4 +6,5 @@ export interface GameItem{
     rating: number;
     prezzo: number;
     annoDiUscita: number;
+    endpoint: string;
 }

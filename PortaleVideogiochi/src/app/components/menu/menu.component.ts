@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   menuList: MenuItem[] = [
     {id: 1, descrizione: 'Home', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.home},
     {id: 2, descrizione: 'Lista', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.lista},
-    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.modifica},
+    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.modifica}
   ];
 
   constructor() { }

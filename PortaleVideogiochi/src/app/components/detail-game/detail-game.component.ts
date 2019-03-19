@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GameItem } from 'src/app/model/gameitem';
 
 @Component({
   selector: 'app-detail-game',
@@ -14,5 +15,8 @@ export class DetailGameComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input('input-game-item')
+  game:GameItem;
 
 }

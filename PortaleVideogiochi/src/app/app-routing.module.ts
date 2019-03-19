@@ -15,10 +15,10 @@ const routes: Routes = [
       { path: RoutingEnum.home, component: HomeComponent },
       { path: RoutingEnum.lista, component: GameListComponent, canDeactivate: [AuthGuard] },
       { path: RoutingEnum.modifica, component: EditGameComponent },
-      { path: RoutingEnum.dettaglio + '/:id', component: DetailGameComponent },
     ],
     canActivateChild: [AuthGuard]
   },
+  { path: RoutingEnum.dettaglio + '/:id', component: DetailGameComponent },
   { path: RoutingEnum.login, component: LoginComponent },
   { path: '', redirectTo: '/' + RoutingEnum.login, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

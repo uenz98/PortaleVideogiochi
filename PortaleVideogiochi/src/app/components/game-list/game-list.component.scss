@@ -1,0 +1,20 @@
+li {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    background-color: #333;
+    cursor: pointer;
+}
+
+p {
+    text-decoration: none;
+    color: white;
+}
+
+li:hover {
+    background-color: green;
+}
+
+router-link-active {
+    background-color: green;
+}

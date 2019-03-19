@@ -9,14 +9,19 @@ import { RoutingEnum } from 'src/app/model/routing-enum';
 })
 export class LoginComponent implements OnInit {
 
+  private email: string = '';
+  private password: string = '';
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   login(){
+    if(this.email==='admin' && this.password==='password'){
       sessionStorage.setItem('navigateFrom', 'navigateFrom');
       this.router.navigateByUrl(RoutingEnum.base+'/'+RoutingEnum.home);
+    }
   }
 
 }

@@ -2,18 +2,15 @@
     <div>
         <h3 class="title">LOG-IN</h3>
     </div>
+    <div>
+        <label for="email">E-mail</label>
+        <input [(ngModel)]="email" class="textbox" required>
+    </div>
 
-    <form>
-        <div>
-            <label for="email">E-mail</label>
-            <input type="text" required class="textbox">
-        </div>
+    <div>
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" class="textbox" required>
+    </div>
 
-        <div>
-            <label for="password">Password</label>
-            <input type="password" required class="textbox">
-        </div>
-
-        <button (click)="login()" type="submit" class="button">Log-in</button>
-    </form>
+    <button type="submit" (click)="login()" class="button">Log-In</button>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DetailToEditService } from 'src/app/services/detail-to-edit.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-game',
@@ -8,10 +8,11 @@ import { DetailToEditService } from 'src/app/services/detail-to-edit.service';
 })
 export class DetailGameComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,) { 
+    console.log(this.route.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit() {
   }
-
 
 }

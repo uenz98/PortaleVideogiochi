@@ -7,6 +7,9 @@ import { GameListComponent } from './components/game-list/game-list.component';
 import { DetailGameComponent } from './components/detail-game/detail-game.component';
 import { EditGameComponent } from './components/edit-game/edit-game.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { MenuComponent } from './components/menu/menu.component';
     GameListComponent,
     DetailGameComponent,
     EditGameComponent,
-    MenuComponent
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

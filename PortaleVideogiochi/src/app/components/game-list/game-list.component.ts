@@ -1,7 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { GameItem } from 'src/app/model/gameitem';
-import { GameListService } from 'src/app/services/game-list.service';
-import { DetailToEditService } from 'src/app/services/detail-to-edit.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-game-list',
@@ -10,25 +7,14 @@ import { DetailToEditService } from 'src/app/services/detail-to-edit.service';
 })
 export class GameListComponent implements OnInit {
 
-  gameList: GameItem[];
 
-  constructor(private gameService: GameListService, private detailService: DetailToEditService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.gameList = this.gameService.getGameList();
   }
 
-  getElementClicked(id:number){
-    return this.gameList[id-1];
+  canNavigateForward(): boolean {
+    return !!sessionStorage.getItem('navigateFrom');
   }
- 
 
-
-  @Output('showDetail')
-  showDetailEvent: EventEmitter<number> = new EventEmitter();
-
-  showDetail(id:number){
-    this.detailService.setGameItem(this.gameService.getGameById(id));
-    this.showDetailEvent.emit(id);
-  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
-import { MenuService } from 'src/app/services/menu.service';
+import { RoutingEnum } from 'src/app/model/routing-enum';
 
 @Component({
   selector: 'app-menu',
@@ -8,19 +8,17 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  menuList: MenuItem[];
+  menuList: MenuItem[] = [
+    {id: 1, descrizione: 'Home', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.home},
+    {id: 2, descrizione: 'Lista', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.lista},
+    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.modifica},
+    {id: 3, descrizione: 'Dettaglio', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.dettaglio}
+  ];
 
-  @Output('showSection')
-  showSectionEvent: EventEmitter<number> = new EventEmitter();
-
-  constructor(private menuService: MenuService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.menuList = this.menuService.menuList;
   }
 
-  showSection(id: number){
-    this.showSectionEvent.emit(id);
-  }
 
 }

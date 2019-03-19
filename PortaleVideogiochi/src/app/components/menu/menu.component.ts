@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
     {id: 1, descrizione: 'Home', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.home},
     {id: 2, descrizione: 'Lista', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.lista},
     {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.modifica},
-    {id: 3, descrizione: 'Dettaglio', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.dettaglio}
+    {id: 4, descrizione: 'Dettaglio', selezionato: false, endpoint: '/'+RoutingEnum.base +'/'+ RoutingEnum.dettaglio}
   ];
 
   constructor() { }

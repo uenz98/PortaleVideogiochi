@@ -7,9 +7,9 @@ import { MenuItem } from '../model/menu-item';
 export class MenuService {
   
   menuList: MenuItem[] = [
-    {id: 1, descrizione: 'Home', selezionato: false, endpoint: ''},
-    {id: 2, descrizione: 'Lista', selezionato: false, endpoint: ''},
-    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: ''}
+    {id: 1, descrizione: 'Home', selezionato: false, endpoint: '/'},
+    {id: 2, descrizione: 'Lista', selezionato: false, endpoint: '/'},
+    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/'}
   ];
   constructor() { }
 }

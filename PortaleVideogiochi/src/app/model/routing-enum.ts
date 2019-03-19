@@ -4,4 +4,5 @@ export enum RoutingEnum{
     lista = 'lista-giochi',
     modifica = 'modifica',
     dettaglio = 'dettaglio',
+    login = 'login'
 }

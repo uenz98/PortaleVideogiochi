@@ -1,6 +1,10 @@
 <ul class="menu">
+    <li><a>{{username}}</a></li>
     <li *ngFor="let item of menuList">
         <a [routerLink]="[item.endpoint]" routerLinkActive="router-link-active">{{item.descrizione}}</a>
+    </li>
+    <li [hidden]="!isAdmin()" [routerLink]="['/modifica']" routerLinkActive="router-link-active">
+        <a>Modifica</a>
     </li>
     <li class="logout">
         <a [routerLink]="['/login']" routerLinkActive="router-link-active">LogOut</a>

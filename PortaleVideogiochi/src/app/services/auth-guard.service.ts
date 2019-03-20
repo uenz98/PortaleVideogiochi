@@ -6,7 +6,7 @@ import { RoutingEnum } from '../model/routing-enum';
 @Injectable()
 export class AuthGuard implements CanActivateChild, CanDeactivate<GameListComponent> {
     canActivateChild(childRoute: import("@angular/router").ActivatedRouteSnapshot, state: import("@angular/router").RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
-        if(sessionStorage.getItem('navigateFrom'))
+        if(sessionStorage.length>0)
             return true;
         return false;
         

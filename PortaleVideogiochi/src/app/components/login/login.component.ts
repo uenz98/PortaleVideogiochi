@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   private email: string = '';
   private password: string = '';
 
+  public static username: string;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -20,9 +21,15 @@ export class LoginComponent implements OnInit {
 
   login(){
     if(this.email==='admin' && this.password==='password'){
-      sessionStorage.setItem('navigateFrom', 'navigateFrom');
+      sessionStorage.setItem('admin', 'admin');
       this.router.navigateByUrl(RoutingEnum.base+'/'+RoutingEnum.home);
+      this.username = this.email;
+    }else{
+      if(this.email!=''){
+        sessionStorage.setItem(this.email,this.password);
+        this.router.navigateByUrl(RoutingEnum.base+'/'+RoutingEnum.home);
+        this.username = this.email;
+      }
     }
   }
-
 }

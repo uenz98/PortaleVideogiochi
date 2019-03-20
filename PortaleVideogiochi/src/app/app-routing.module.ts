@@ -8,6 +8,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { RoutingEnum } from './model/routing-enum';
 import { DetailGameComponent } from './components/detail-game/detail-game.component';
 import { LoginComponent } from './components/login/login.component';
+import { ModifyComponent } from './modifica/modify/modify.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   { path: RoutingEnum.dettaglio + '/:id', component: DetailGameComponent },
   { path: RoutingEnum.login, component: LoginComponent },
+  {path: RoutingEnum.modifica, component: ModifyComponent},
   { path: '', redirectTo: '/' + RoutingEnum.login, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

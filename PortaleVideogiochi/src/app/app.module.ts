@@ -10,7 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ModifyComponent } from './modifica/modify/modify.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms'
     EditGameComponent,
     MenuComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    ModifyComponent
   ],
   imports: [
     BrowserModule,

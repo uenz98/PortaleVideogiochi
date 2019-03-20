@@ -17,6 +17,6 @@ export class GameListComponent implements OnInit {
   }
 
   canNavigateForward(): boolean {
-    return !!sessionStorage.getItem('navigateFrom');
+    return sessionStorage.length>0;
   }
 }
